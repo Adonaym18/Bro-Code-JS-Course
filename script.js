@@ -1,81 +1,44 @@
-//! JS Basics
+//! Arithmetic Operatiors
+//* arithmetic opertatiors = operands = values, variables, etc..)
+                            //* operatiors = (+ - * /)
+                              // ex. 11 = x + 5;
+                                // 11/5/x = operand
+                                // =/+ = operator
 
-//? Print content in the output/console
+// let students = 30; 
 
-// console.log(`Hello`);
-// console.log(`I like pizza`);
+// students = students + 1; 
+// students = students - 1;
+// students = students * 2;
+// students = students / 2;
+// students = students **2;
+// let extraStudents = students % 2; - modulus operator
 
-//? Aleart pop out on screen
+//* Shortcuts - augumented assignmnet operators 
 
-// window.alert(`This is an alert`);
-// window.alert(`I like pizza`);
+// students += 1;
+// students -= 1;
+// students *=2;
+// students /=2;
+// students **=2;
+// students %=2;
 
-//? Add Content to element
+//* increment and decrement operators  
 
-// document.getElementById("myH1").textContent =  `Hello`;
-// document.getElementById("myP").textContent = `I like pizza!`
+// students++; - increment 
+// students--; - decrement
 
+/* 
+    Operator Presidence
+    1. parenthesis ()
+    2. exponets
+    3. multiplication, division, modulo 
+    4. addition & subtraction
 
-//! Variables
+example: 
+  
+  let result = 1 + 2 * 3 + 4 ** 2; 
+  console.log(result);
+  output = 23
 
-//* variables = A container that stores a value inside and 
-//*             behaves as if it were that value that was contained
-
-// 1. declaration  let x;
-// 2. assignment   x = 100; 
-// 3. console.log(x); 
-// 4. output = 100 Here the container is behaving as if it were the value inside because the output is 100
-
-//? Types of varibales / dataTypes
-
-//* To checck the type of varible console.log(typeof + variable name);   
-
-//* Numbers 
-// let age = 25; 
-// let price = 10.99;
-// let gpa = 2.1;
-// console.log(`You are ${age} years old`);  
-// console.log(`The price is $ ${price}`);
-// console.log(`Your gpa is: ${gpa}`);
-// Output: 
-// You are 25 years old
-// The price is $ 10.99
-// Your gpa is: 2.1
-
-
-//*Strings 
-// let firstName = "Adonay";
-// let favoriteFood = "Sushi";
-// let email = "adonay.mendez255@gmail.com"
-// console.log(typeof firstName);
-// console.log(`Your name is ${firstName}`);
-// console.log(`You like ${favoriteFood}`);
-// console.log(`Your email is ${email}`);
-// Output:
-// Your Name is Adonay 
-// You like Sushi
-// Your email is adonay.mendez255@gmail.com
-
-
-//*Booleans
-// let online = false;
-// let forSale = true;
-// let isStudent = true; 
-// console.log(`Adonay is online: ${online}`); 
-// console.log (`Is this car for sale: ${forSale}`);
-// console.log(`Enrolled: ${isStudent}`);
-// Output:
-// Adonay is online: false 
-// Is this car for sale: true
-// Enrolled: true
-
-//! Variables - Wrap up 
-
-// let fullName = "Adonay Mendez";
-// let age = 19;
-// let isStudent = true;
-
-// document.getElementById("p1").textContent = `Your name is ${fullName}`;
-// document.getElementById("p2").textContent = `You are ${age} years old`;
-// document.getElementById("p3").textContent = `Enrolled: ${isStudent}`;
-
+*/
