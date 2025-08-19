@@ -1,15 +1,26 @@
-// const (constants) = are variables that cannot be changed 
+//  COUNTER PROGRAM
 
-const PI = 3.14159
-let radius;
-let circumference; 
+const decreaseBtn = document.getElementById("decreaseBtn");
+const resetBtn = document.getElementById("resetBtn");
+const increaseBtn = document.getElementById("increaseBtn");
+const countLable = document.getElementById("countLabel");
+let count = 0; 
 
-
- document.getElementById("submit").onclick = function () {
-  radius = document.getElementById("input").value; 
-  radius = Number(radius); 
-  circumference = 2 * PI * radius;
-  document.getElementById("result").textContent = circumference + "cm"; 
-  
+increaseBtn.onclick = function() {
+  count++; 
+  countLable.textContent = count; 
 }
+
+
+resetBtn.onclick = function() {
+  count = 0;
+  countLable.textContent = count;  
+}
+
+decreaseBtn.onclick = function () {
+  count--; 
+  countLable.textContent = count;
+}
+
+
 
