@@ -1,26 +1,33 @@
-// Math = built-in object that provides a
-          //collection of properties and methods
+// General Knowledge
+ 
+// let min = 50; 
+// let max = 100; 
+// let randomNum = Math.floor(Math.random() * (max - min)) + min;
+// console.log(randomNum);
 
 
-// Math.PI - pi
-// Math.E - Euler's Number
+// RANDOM NUMBER GENERATOR 
 
-let x = 3; 
-let y = 2;
-let z = 1;
+const myButton = document.getElementById("myButton");
+const label1 = document.getElementById("label1");
+const label2 = document.getElementById("label2");
+const label3 = document.getElementById("label3");
 
-//z = Math.round() - Round
-//z = Math.floor(x) - Rounds down
-//z = Math.ceil(x) -  Rounds Up
-//z = Math.trunc(x) - Eliminates Decimal Portion
-//z = Math.pow(x, y) - Raises the value on the left to the power of the value on the right
-//z = Math.sqrt(x) - Sqaure Root
-//z = Math.log(x); - Natural Log
-// z = Math.sin(x); - sin
-// z = Math.cos(x); - cos
-// z = Math.tan(x); - tan
-// z = Math.abs(x); - absolute value
-// z = Math.sign(x) - to the sign of a number 
+const min = 1; 
+const max = 6; 
 
-// let max = Math.max(x, y, z); - to find the maximum value from amoung all 3 varibales
-// let min = Math.min(x, y, z);  - to find the minimum value from amoung all 3 varibales
+let randomNum1; 
+let randomNum2; 
+let randomNum3; 
+
+
+myButton.onclick = function () {
+  randomNum1 = Math.floor(Math.random() * max) + min;
+  randomNum2 = Math.floor(Math.random() * max) + min;
+  randomNum3 = Math.floor(Math.random() * max) + min;
+
+  label1.textContent = randomNum1;
+  label2.textContent = randomNum2; 
+  label3.textContent = randomNum3; 
+
+}
