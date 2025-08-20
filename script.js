@@ -1,33 +1,86 @@
-// General Knowledge
- 
-// let min = 50; 
-// let max = 100; 
-// let randomNum = Math.floor(Math.random() * (max - min)) + min;
-// console.log(randomNum);
+//* IF STATEMENTS = If a condition is true, execute some code
+                    // if not, do something else
 
 
-// RANDOM NUMBER GENERATOR 
+//* Example 1 
 
-const myButton = document.getElementById("myButton");
-const label1 = document.getElementById("label1");
-const label2 = document.getElementById("label2");
-const label3 = document.getElementById("label3");
+  // let age = 17;  
 
-const min = 1; 
-const max = 6; 
+  // if(age >= 21) {
+  //   console.log("You may enter the club!")
+  // }
+  // else {
+  //   console.log("Get tf OUT!!!")
+  // }
 
-let randomNum1; 
-let randomNum2; 
-let randomNum3; 
+//* Eample 2 
 
+  // let isStudent = false; 
 
-myButton.onclick = function () {
-  randomNum1 = Math.floor(Math.random() * max) + min;
-  randomNum2 = Math.floor(Math.random() * max) + min;
-  randomNum3 = Math.floor(Math.random() * max) + min;
+  // if(isStudent){
+  //   console.log("You are a student!");
+  // }
+  // else {
+  //   console.log("You are NOT a student!")
+  // }
 
-  label1.textContent = randomNum1;
-  label2.textContent = randomNum2; 
-  label3.textContent = randomNum3; 
+//* Eample 3 
 
+  // let age = 19;
+  // let hasLicense = true; 
+
+  // if(age >= 16){
+  //   console.log("You are old enough to drive");
+
+  //     if(hasLicense) {
+  //       console.log("And you have your license!");
+  //     }
+  //     else{
+  //       console.log("You do not have your license yet");
+  //     }
+  // }
+  // else {
+  //   console.log("You are NOT old enought to drive"); 
+  // }
+
+//* Example 4 - else if staements
+
+  const myText = document.getElementById("myText");
+  const mySubmit = document.getElementById("mySubmit");
+  const resultElement = document.getElementById("resultElement"); 
+  let age;
+  
+  
+mySubmit.onclick = function() {
+
+  age = myText.value;
+  age = Number(age); 
+
+  if(age >= 100) {
+    resultElement.textContent = `You are TOO OLD for this site`;
+  }
+
+  else if(age == 0) {
+    resultElement.textContent = `come on bruh! you were just born`;
+
+  }
+
+  else if(age >= 18) {
+    resultElement.textContent = `You are old enough to enter this site`;
+    
+  }
+
+  else if(age < 0) {
+    resultElement.textContent = `Please enter real age number`;
+
+  }
+
+  else {
+    resultElement.textContent = `You are not old enough to enter this site`;
+
+  }
 }
+
+
+
+
