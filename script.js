@@ -1,85 +1,42 @@
-//* IF STATEMENTS = If a condition is true, execute some code
-                    // if not, do something else
+// .checked = property that determines determines the checked state of an 
+//            HTML checkbox or radio button element
 
+const myCheckbox = document.getElementById("myCheckbox");
+const visaBbtn = document.getElementById("visaBbtn");
+const masterCardBtn = document.getElementById("masterCardBtn");
+const payPallBtn = document.getElementById("payPallBtn");
+const mySubmit = document.getElementById("mySubmit");
+const subResult = document.getElementById("subResult");
+const paymentResult = document.getElementById("paymentResult");
 
-//* Example 1 
-
-  // let age = 17;  
-
-  // if(age >= 21) {
-  //   console.log("You may enter the club!")
-  // }
-  // else {
-  //   console.log("Get tf OUT!!!")
-  // }
-
-//* Eample 2 
-
-  // let isStudent = false; 
-
-  // if(isStudent){
-  //   console.log("You are a student!");
-  // }
-  // else {
-  //   console.log("You are NOT a student!")
-  // }
-
-//* Eample 3 
-
-  // let age = 19;
-  // let hasLicense = true; 
-
-  // if(age >= 16){
-  //   console.log("You are old enough to drive");
-
-  //     if(hasLicense) {
-  //       console.log("And you have your license!");
-  //     }
-  //     else{
-  //       console.log("You do not have your license yet");
-  //     }
-  // }
-  // else {
-  //   console.log("You are NOT old enought to drive"); 
-  // }
-
-//* Example 4 - else if staements
-
-  const myText = document.getElementById("myText");
-  const mySubmit = document.getElementById("mySubmit");
-  const resultElement = document.getElementById("resultElement"); 
-  let age;
+mySubmit.onclick = function () {
   
-  
-mySubmit.onclick = function() {
-
-  age = myText.value;
-  age = Number(age); 
-
-  if(age >= 100) {
-    resultElement.textContent = `You are TOO OLD for this site`;
+  if(myCheckbox.checked){
+    subResult.textContent = `You are subscribed`;
   }
 
-  else if(age == 0) {
-    resultElement.textContent = `come on bruh! you were just born`;
-
+  else{
+    subResult.textContent = `You are not subscribed`; 
   }
 
-  else if(age >= 18) {
-    resultElement.textContent = `You are old enough to enter this site`;
-    
+  if(visaBbtn.checked){
+    paymentResult.textContent = `You are paying with visa`;
   }
 
-  else if(age < 0) {
-    resultElement.textContent = `Please enter real age number`;
+  else if(masterCardBtn.checked) {
+    paymentResult.textContent = `You are paying with MasterCard`;
+  }
 
+  else if(payPallBtn.checked) {
+    paymentResult.textContent = `You are paying with PayPall`;
   }
 
   else {
-    resultElement.textContent = `You are not old enough to enter this site`;
-
+    paymentResult.textContent = `You must select a payment type`;
   }
 }
+
+
 
 
 
