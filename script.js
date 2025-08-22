@@ -1,23 +1,65 @@
-// ternary operator = a shortcut to if{} and else{} statements
-//                    helps to assign a variable base on a condition 
-//                     condition ? codeIfTrue : codeIfFalse; 
+// SWITCH = Can be an efficient replacement to many else if statements 
 
-// let age = 8; 
-// let message = age >= 18 ? "You're an adult" : "You're a minor"; 
-// console.log(message); 
+//EXAMPLE 1
 
-// let time = 11; 
-// let greeting = time < 12 ? "Good morning!" : "Good afternoon!"; 
-// console.log(greeting); 
+// let day = 7; 
 
-// let isStudent = false; 
-// let message = isStudent ? "You are a student" : "You are not a student"
-// console.log(message);
+//   switch(day){
+//     case 1:
+//       console.log(`It is Monday`); 
+//       break; // to break out of the case and execute the code after it
 
-let purchaseAmount = 125;
-let discount = purchaseAmount >= 100 ? 10 : 0; 
-console.log(`You're total is $${purchaseAmount - purchaseAmount * (discount/100) }`);
+//     case 2:
+//       console.log(`It is Tuesday`); 
+//       break; 
+
+//     case 3:
+//       console.log(`It is Wensday`); 
+//       break; 
+
+//     case 4:
+//       console.log(`It is Thursday`); 
+//       break; 
+
+//     case 5:
+//       console.log(`It is Friday`); 
+//       break; 
+    
+//     case 6:
+//       console.log(`It is Saturday`); 
+//       break; 
+    
+//     case 7:
+//       console.log(`It is Sunday`); 
+//       break; 
+
+//      default: 
+//       console.log(`${day} is not a day`); 
+
+//   }
 
 
+// EXAMPLE 2
+
+let testScore = 65; 
+let letterGrade; 
+
+switch(true) {
+  case testScore >= 90:
+      letterGrade = "A"; 
+      break; 
+  case testScore >= 80:
+      letterGrade = "B";
+      break; 
+  case testScore >= 70:
+      letterGrade = "C"
+      break; 
+  case testScore >= 60:
+      letterGrade = "D"
+      break; 
+      default: letterGrade = "F"; 
+}
+  
+console.log(letterGrade); 
 
 
