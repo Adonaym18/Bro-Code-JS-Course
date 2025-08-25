@@ -1,25 +1,28 @@
-//* logical operators = used to combine or manipluate boolena values (true or false); 
+//* Strict Equality
+//*  = assignment operator 
+//*  == comparison operator (comare if values are equal)
+//*  === strict equlity operator (compare if values & datatype are equal)
+//*  != inequality operator 
+//* !== strict inequality operator
 
-//*             AND = &&  - Both conditions must be true 
-//*             OR = ||   - At least one condition must be true 
-//*             NOT = !   - Will do the opposite
 
-// const temp = 250;
+// Example 1 - == vs ===
+// const PI = 3.14 
 
-// if(temp <= 0 || temp > 30 ){
-//   console.log("The weather is BAD");
+// if (PI === "3.14") {
+//   console.log("That is PI"); 
 // }
+//   else{
+//     console.log("That is not PI")
+//   }
 
-//  else {
-//   console.log("The weather is GOOD");
 
-//  }
+// Example 2 - != vs !===
+ const PI = 3.14 
 
-const isSunny = true;
-
-if(! isSunny) {
-  console.log("it is CLOUDY")
+if (PI != "3.14") {
+  console.log("That is NOT PI"); 
 }
-  else {
-    console.log("it is SUNNY")
+  else{
+    console.log("That is PI")
   }
