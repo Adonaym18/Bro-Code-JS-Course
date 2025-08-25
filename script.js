@@ -1,22 +1,25 @@
-//* Method Chaining = Calling one method after another
-//*                   in one continous line of code. 
+//* logical operators = used to combine or manipluate boolena values (true or false); 
 
-let username = window.prompt("Enter your username: ");
+//*             AND = &&  - Both conditions must be true 
+//*             OR = ||   - At least one condition must be true 
+//*             NOT = !   - Will do the opposite
 
+// const temp = 250;
 
-//* EX - NO METHOD CHAINING 
+// if(temp <= 0 || temp > 30 ){
+//   console.log("The weather is BAD");
+// }
 
-// username = username.trim();
-// let letter = username.charAt(0); 
-// letter = letter.toUpperCase(); 
+//  else {
+//   console.log("The weather is GOOD");
 
-// let extraChar = username.slice(1); 
-// extraChar = extraChar.toLowerCase(); 
-// username = letter + extraChar;
+//  }
 
-// console.log(username); 
+const isSunny = true;
 
-//* EX - WITH METHOD CHAINING
-
-username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase(); 
-console.log(username)
+if(! isSunny) {
+  console.log("it is CLOUDY")
+}
+  else {
+    console.log("it is SUNNY")
+  }
