@@ -1,31 +1,22 @@
-// string slicing = creating a subsrting 
-//                   from a portion of another string
+//* Method Chaining = Calling one method after another
+//*                   in one continous line of code. 
 
-//                    string.slice(start, end)
-
-//      Exmple 1 
-
-// const fullName = "Adonay Mendez"
-
-// let firstName = fullName.slice(0, 6);
-// let lastName = fullName.slice(7);
-
-// let firstChar = fullName.slice(0 , 1); 
-// let lastChar = fullName.slice(-1);
-
-// let firstName = fullName.slice(0, fullName.indexOf(" ")); 
-// let lastName = fullName.slice(fullName.indexOf(" ") + 1);
-
-// console.log(firstName);
-// console.log(lastName); 
+let username = window.prompt("Enter your username: ");
 
 
-// Example 2 
+//* EX - NO METHOD CHAINING 
 
-const email = "adonay.mendez255@gmail.com"; 
+// username = username.trim();
+// let letter = username.charAt(0); 
+// letter = letter.toUpperCase(); 
 
-let username = email.slice(0, email.indexOf("@")); 
-let extenstion = email.slice(email.indexOf("@") + 1); 
+// let extraChar = username.slice(1); 
+// extraChar = extraChar.toLowerCase(); 
+// username = letter + extraChar;
 
-console.log(username); 
-console.log(extenstion); 
+// console.log(username); 
+
+//* EX - WITH METHOD CHAINING
+
+username = username.trim().charAt(0).toUpperCase() + username.trim().slice(1).toLowerCase(); 
+console.log(username)
