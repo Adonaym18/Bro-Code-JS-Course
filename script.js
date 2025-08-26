@@ -1,60 +1,23 @@
-// while loop = repeat some code WHILE some condition is true 
+// for loop = repeat some code a LIMITED amount of times 
 
 
-//* Example 1 - while loop 
-
-// let username = "";
-
-//   while(username === "" || username === null) {
-//   username = window.prompt("Enter your name"); 
-// }
-// console.log(`Hello ${username}`);
-
-
-//* Example 2 - do while loop 
-
-// let username; 
-
-// do {
-//     username = window.prompt("Enter your name"); 
-// }while(username === "" || username === null)
-// console.log(`Hello ${username}`);
-
-//* Example 3 
-
-// let loggedIn = false; 
-// let username; 
-// let password; 
-
-// while(!loggedIn){
-//   username = window.prompt("Enter your username: ");
-//   password = window.prompt("Enter your password: ");
-
-//   if(username === "myUsername"  && password == "myPassowrd"){
-//     loggedIn = true; 
-//     console.log("You are logged in!")
-//   }
-//   else{
-//     console.log("Invalid credentials! Please try again"); 
-//   }
+// * Example 1 
+// for(let i = 10; i > 0; i--){
+//     console.log(i); 
 // }
 
+// console.log("HAPPY NEW YEAR"); 
 
-//* Example 3 - using do while loop
+// * Example 2 - Countinue & Break 
 
-let loggedIn = false; 
-let username; 
-let password; 
+for(let i = 1; i <= 20; i++){
 
-do{
-  username = window.prompt("Enter your username: ");
-  password = window.prompt("Enter your password: ");
+    if(i == 13) {
+      continue;  // to skip over the number 13
+      // break;    to end the for loop before the number 13 
+    }
 
-  if(username === "myUsername"  && password == "myPassowrd"){
-    loggedIn = true; 
-    console.log("You are logged in!")
-  }
-  else{
-    console.log("Invalid credentials! Please try again"); 
-  }
-}while(!loggedIn);
+    else {
+      console.log(i);
+    }
+}
