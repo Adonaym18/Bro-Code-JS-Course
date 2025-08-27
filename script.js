@@ -1,23 +1,42 @@
-// for loop = repeat some code a LIMITED amount of times 
+// NUMBER GUESSING GAME
+
+const minNum = 1;
+const maxNum = 100; 
+const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+let attempts = 0; 
+let guess; 
+let running = true; 
+
+while(running){
+
+  guess = window.prompt(`Guess a number between ${minNum} - ${maxNum}`); 
+  guess = Number(guess);
+  
+  if(isNaN(guess)) {
+    window.alert(`Please enter a valid number`);
+  }
+
+  else if(guess < minNum || guess > maxNum){
+    window.alert("Please enter a valid number"); 
+  }
 
 
-// * Example 1 
-// for(let i = 10; i > 0; i--){
-//     console.log(i); 
-// }
+  else{
+    attempts++;
+     if(guess < answer){
+      window.alert("TOO LOW! TRY AGAIN"); 
+     }
 
-// console.log("HAPPY NEW YEAR"); 
+     else if(guess > answer){
+      window.alert("TOO HIGH! TRY AGAIN"); 
+     }
 
-// * Example 2 - Countinue & Break 
+     else {
+       window.alert(`CORRECT! The answer was ${answer}. It took you ${attempts} attempts.`);
+      running = false;
 
-for(let i = 1; i <= 20; i++){
+     }
+  }
 
-    if(i == 13) {
-      continue;  // to skip over the number 13
-      // break;    to end the for loop before the number 13 
-    }
-
-    else {
-      console.log(i);
-    }
 }
