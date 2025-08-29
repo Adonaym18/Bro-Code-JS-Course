@@ -1,23 +1,31 @@
-// variable scope = where a variable is recongnized 
-//                  and accessible (local vs global); 
+// TEMPERATURE CONVERSION PROGRAM
+
+const textBox = document.getElementById("textBox");
+const toFahrenheit = document.getElementById("toFahrenheit");
+const toCelsius = document.getElementById("toCelsius");
+const result = document.getElementById("result");
+let temp; 
 
 
-// Global Scope - could be accessed from anywhere 
-let x = 3;
-function2();
 
 
-// Local Scope - stricly private to its function 
-//               which is why you can create to with similiar variable 
-//               names and not cause an error. 
+function convert(){
 
-function function1(){
-  // let x = 1; 
-  console.log(x);
+  if(toFahrenheit.checked){
+     temp = Number(textBox.value);
+     temp = temp * 9 / 5 + 32; 
+     result.textContent = temp.toFixed(1) + "°F";    
+  }
+
+  else if(toCelsius.checked){
+     temp = Number(textBox.value);
+     temp = (temp - 32) * (5/9); 
+     result.textContent = temp.toFixed(1) + "°C";  
+
+  }
+
+  else{
+    result.textContent = "Select a unit"; 
+  }
+
 }
-function function2(){
-  // let x = 2; 
-  console.log(x);
-}
-
-
