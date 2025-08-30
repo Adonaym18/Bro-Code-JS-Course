@@ -1,31 +1,28 @@
-// TEMPERATURE CONVERSION PROGRAM
+let currentYear = 2025; 
+let running = true; 
 
-const textBox = document.getElementById("textBox");
-const toFahrenheit = document.getElementById("toFahrenheit");
-const toCelsius = document.getElementById("toCelsius");
-const result = document.getElementById("result");
-let temp; 
+while(running){
 
+  let ques = window.prompt("Enter your birth year: ");
+  ques = Number(ques);
+  let year = ques; 
 
-
-
-function convert(){
-
-  if(toFahrenheit.checked){
-     temp = Number(textBox.value);
-     temp = temp * 9 / 5 + 32; 
-     result.textContent = temp.toFixed(1) + "°F";    
+  if(isNaN(year)){
+    window.alert("Please enter a valid number"); 
   }
 
-  else if(toCelsius.checked){
-     temp = Number(textBox.value);
-     temp = (temp - 32) * (5/9); 
-     result.textContent = temp.toFixed(1) + "°C";  
-
+  else if(year > currentYear){
+    window.alert("please enter a valid year"); 
   }
 
   else{
-    result.textContent = "Select a unit"; 
+    let age = currentYear - year; 
+    window.alert(`You are ${age} years old`); 
+    running = false; 
   }
-
 }
+
+
+
+
+
