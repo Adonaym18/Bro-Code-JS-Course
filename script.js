@@ -1,61 +1,44 @@
-// ROCK, PAPER, SCISSORS GAME (PRACTICE)
-const options = ["ROCK" , "PAPER", "SCISSORS"]; 
+// array = a variable like structure that can hold more than 1 value
 
-let running = true;
+let fruits = ["apple" , "orange", "banana", "mango"]; 
 
-while(running) {
-  let playerScore = 0;
-  let computerScore = 0;
+// fruits[3] = "mango"; 
+// fruits.push("cocnut"); - To push/add an element to the end of the array 
+// fruits.pop(); - removes the last element
+// fruits.unshift("mango"); - Adds element to the beginning of an array
+// fruits.shift(); - Removes an element from the beginning of an array
 
-  //Play until someone reaches 3
-  //This inner loop controls what happens during the game while the score is less than 3
-  while(playerScore < 3 && computerScore < 3) {
-    // Choose a random array from the options variable
-    let randomIndex = Math.floor(Math.random() * options.length); 
-    let computer = options[randomIndex];
-    //Eliminates extra space inside the input and sets the input to uppercase to match that of the arrarys.
-    // This also prevents mistakes
-    let player = window.prompt("Rock, Paper, Scissors").trim().toUpperCase(); 
-    
-    // Check for invalid input first
-    // Checks if the player(the input of the prompt) does not match array list items in options and runs an alert
-    if(!options.includes(player)){
-      window.alert("Please enter ROCK, PAPER, or SCISSORS");
-      continue; // skip to next loop iteration
-    }
+// console.log(fruits[0]);
+// console.log(fruits[1]);
+// console.log(fruits[2]);
+// console.log(fruits[3]);
 
-    if(player === computer) {
-      window.alert("It's a tie! Computer also chose " + computer +  ` \n Current Score: \n You = ${playerScore} \n Computer = ${computerScore}`); 
-    }else if(
-      (player === "ROCK" && computer === "SCISSORS") ||
-      (player === "PAPER" && computer === "ROCK") ||
-      (player === "SCISSOR" && computer === "PAPER")
-      ) {
-      playerScore++;   
-      window.alert(`You win this round! Computer chose ${computer}!\n Score: \n You = ${playerScore} \n Computer = ${computerScore}`); 
-    }else {
-      computerScore++; 
-      window.alert(`You lose this round! Computer chose ${computer}! \n Score: You = ${playerScore} \n Computer = ${computerScore}`); 
-    }
-  }
+// let numOffruits = fruits.length; - To get the length of an array; 
+// let index = fruits.indexOf("apple"); - To find a particular fruit in array 
+// console.log(index); 
 
-  //* once score is no longer < 3 it will exit the loop 
+// To loop through elements and display them
 
-    //Decide overall winner
-    if (playerScore === 3) {
-      window.alert("🎉 You win the best of 3!");
-    }
+// for(let i = 1; i < fruits.length; i+=2) {
+//   console.log(fruits[i]);
+// }
 
-    else {
-      window.alert("💻 Computer wins the best of 3!"); 
-    }
 
-    //ask to play again
-    if (!confirm("Play again")) {
-      running = false; 
-    }
-    // let again = window.prompt("Play again? (yes/no)").toLowerCase(); 
-    //   if (again !== "yes") {
-    //     running = false; 
-    //   }
+// to do it in reverse
+// for(let i = fruits.length - 1; i >= 0; i--){
+//   console.log(fruits[i]);
+// }
+
+
+// fruits.sort(); - to sort in alphabetical order
+// fruits.sort().reverse(); - to sort in reverse alphabetical order
+
+
+// enchanced for loop (short cut)
+for(let fruit of fruits){
+  console.log(fruit);
 }
+
+
+
+
