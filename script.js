@@ -1,29 +1,65 @@
-//* Spread Operator = ... allows an iterable such as an 
-//                      array or string to be expanded 
-//                      into sperate elements 
-//                      (unpacks the elements)
+// rest parameters = (...rest) allow a funciton to work with a variable
+//                    number of arguments by bundling then in an array
 
-//* Example with numbers 
+//                    spread =  expands an array into seprarte elements
+//                    rest = bundles seperate elements into an array
 
-// let numbers = [1, 2, 3, 4, 5];
-// let max = Math.max(...numbers);
-// let min = Math.min(...numbers); 
+//* Example 1
 
-// console.log(min);
+// function openFridge(...foods) {
+//   console.log(...foods); // to expand the array back into separate elements
+// }
 
-//* Example with strings
+// Stick all e
+// function getFood(...foods){
+//   return foods; 
+// }
 
-// let username =  "Adonay"
-// let letters = [...username].join("-")
-// console.log(letters);
-
-//* Example 1 
-let fruits = ["apple", "orange", "banana"];
-let vegatables = ["carrots", "celery", "potatoes"]; 
-let foods = [...fruits, ...vegatables, "eggs", "milk"];
-
-console.log(foods); 
+// const food1 = "pizza";
+// const food2 = "hamburger";
+// const food3 = "suhsi";
+// const food4 = "hotdog";
+// const food5 = "ramen";
 
 
+// openFridge(food1, food2, food3, food4, food5); // This is the step that places the variables into the array
+
+// const foods = getFood(food1, food2, food3, food4, food5);
+// console.log(foods);
 
 
+//* Example 2 
+// function sum(...numbers){
+//   let result = 0;
+
+//   for(let number of numbers) {
+//     result += number; 
+//   }
+//   return result; 
+// } 
+
+// const total = sum(1, 2, 3, 4, 5); 
+
+// console.log(`Your total is $${total}`); 
+
+// function getAverage(...numbers){
+//   let result = 0;
+
+//   for(let number of numbers) {
+//     result += number; 
+//   }
+//   return result / numbers.length; 
+// } 
+
+// const total = getAverage(75 , 100, 85, 90, 50);
+// console.log(total); 
+
+//* Example 3 = using the rest parameters to comine strings into one
+
+function combineStrings(...strings){
+  return strings.join(" ");
+}
+
+const fullName = combineStrings("Mr.", "Spongebob", "Squarepants", "III");
+
+console.log(fullName);
