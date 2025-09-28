@@ -1,43 +1,50 @@
-// RANDOM PASSWORD GENERATOR 
+// Callback = a function that is passed as an argument
+//            to another fuction 
+
+//            used to handle asynchronous operations: 
+//            1. Reading a file 
+//            2. Network request 
+//            3. Interacting with databases
+
+//            "Hey, when you're done, call this next."
+
+//* Ex 1 
+
+// hello(wait); 
+
+// function hello(callback){
+//   console.log("Hello"); 
+//   callback(); 
+// }
+
+// function wait(){
+//   console.log("Wait"); 
+// }
+
+// function leave(){
+//   console.log("Leave"); 
+// }
+
+// function goodbye(){
+//   console.log("Goodbye"); 
+// }
 
 
-function generatePassoword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols){
+//* Ex 2
 
-  const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"; 
-  const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numberChars = "0123456789"; 
-  const symbolChars = "!@#$%^&*()_";
+sum(displayPage, 1, 2); 
 
-  let allowedChars = ""; 
-  let passowrd = ""; 
-
-  allowedChars += includeLowercase ? lowercaseChars : ""; 
-  allowedChars += includeUppercase ? uppercaseChars : ""; 
-  allowedChars += includeNumbers ? numberChars : ""; 
-  allowedChars += includeSymbols ? symbolChars: ""; 
-
-
-  if(length <= 0){
-    return `(password length must be at least 1)`; 
-  }
-  if(allowedChars.length === 0){
-    return `(At least 1 set of characters needs to be selected)`; 
-  }
-
-  for(let i = 0; i < length; i++){
-    const randomIndex = Math.floor(Math.random() * allowedChars.length); 
-    passowrd += allowedChars[randomIndex]; 
-  }
-
-  return passowrd; 
+function sum(callback, x, y){
+  let result = x + y; 
+  callback(result); 
 }
 
-const passwordLength = 10; 
-const includeLowercase = true; 
-const includeUppercase = true; 
-const includeNumbers = true; 
-const includeSymbols = true; 
+function displayConsole(result){
+  console.log(result); 
+}
 
-const passowrd = generatePassowrd(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+function displayPage(result){
+  document.getElementById("myH1").textContent = result; 
+}
 
-console.log(`Generated Password: ${passowrd}`)
+
