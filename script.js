@@ -1,50 +1,57 @@
-// Callback = a function that is passed as an argument
-//            to another fuction 
+// forEach() = method used to iterate over the elemnts 
+//             of an array and apply a specified function (callback)
+//             to each element
 
-//            used to handle asynchronous operations: 
-//            1. Reading a file 
-//            2. Network request 
-//            3. Interacting with databases
+//             array.forEach(callback)
+//             element, index, array are provided to the callback
 
-//            "Hey, when you're done, call this next."
+// ex
+// let numbers = [1, 2, 3, 4, 5]; 
 
-//* Ex 1 
+// numbers.forEach(cube); 
+// numbers.forEach(display);
 
-// hello(wait); 
-
-// function hello(callback){
-//   console.log("Hello"); 
-//   callback(); 
+// function double(element, index, array){
+//   array[index] = element * 2;
 // }
 
-// function wait(){
-//   console.log("Wait"); 
+// function triple(element, index, array){
+//   array[index] = element * 3;
 // }
 
-// function leave(){
-//   console.log("Leave"); 
+// function square(elemnt, index, array){
+//   array[index] = Math.pow(elemnt, 2); 
 // }
 
-// function goodbye(){
-//   console.log("Goodbye"); 
+// function cube(elemnt, index, array){
+//   array[index] = Math.pow(elemnt, 3); 
 // }
 
+// function display(element){
+//   console.log(element); 
+// }
 
-//* Ex 2
+//* ex
 
-sum(displayPage, 1, 2); 
+let fruits = ["apple", "orange", "banana", "coconut"]; 
 
-function sum(callback, x, y){
-  let result = x + y; 
-  callback(result); 
+fruits.forEach(cap); 
+fruits.forEach(display); 
+
+
+function upperCase (element, index, array){
+  array[index] = element.toUpperCase(); 
 }
 
-function displayConsole(result){
-  console.log(result); 
+function lowerCase (element, index, array){
+  array[index] = element.toLowerCase(); 
 }
 
-function displayPage(result){
-  document.getElementById("myH1").textContent = result; 
+function cap(element, index, array){
+  array[index] = element.charAt(0).toUpperCase() + element.slice(1)
 }
 
+function display(element){
+  console.log(element); 
+}
 
