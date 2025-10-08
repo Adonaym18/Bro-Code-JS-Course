@@ -1,47 +1,55 @@
-// .map() = accepts a callback and applies that function
-//          to each element of an array, then return a new array 
-
-//          forEach() vs map() = The for each loops through each element of the array changing them one by one
-//                               The map() function creates a new array with the affected changes rather than altering the original one 
+// .filter() = creates a new array by filtering
+//             out elements
 
 
-//* Ex 1
-// const numbers = [1, 2, 3, 4, 5];
+//* Ex1 - filtering out odd numbers 
 
-// const squares = numbers.map(square); 
-// const cubes = numbers.map(cube); 
-// console.log(cubes); 
+// let numbers = [1, 2, 3, 4, 5, 6, 7]; 
+// let evenNums = numbers.filter(isEven);
+// let oddNums = numbers.filter(isOdd);
 
-// function square(element){
-//   return Math.pow(element , 2); 
+
+// console.log(oddNums); 
+ 
+// function isEven(element){
+//   return element % 2 === 0; 
 // }
 
-// function cube(element){
-//   return Math.pow(element , 3); 
+// function isOdd(element){
+//   return element % 2 !== 0; 
 // }
 
-//* Ex2 
+//* Ex2  
 
-// const students = ["Spongebob", "Patrick", "Squidward", "Sandy"]; 
+// const ages = [16, 17, 18, 18, 19, 20, 60]; 
+// const adults = ages.filter(isAdult); 
+// const childern = ages.filter(isChild); 
 
-// const upper = students.map(upperCase); 
-// const lower = students.map(lowerCase); 
-// console.log(lower); 
+// console.log(childern); 
 
-// function upperCase(element){
-//   return element.toUpperCase();  
+// function isAdult(element){
+//   return element >= 18; 
 // }
 
-// function lowerCase(element){
-//   return element.toLowerCase();  
+
+// function isChild(element){
+//   return element < 18; 
 // }
 
-//* Ex3 
-const dates = ["2024-1-10", "2025-2-20", "2026-3-30"]; 
-const formattedDates = dates.map(formatDates); 
-console.log(formattedDates); 
+//* Ex 3 
+const words = ["apple", "orange", "banana", "kiwi", "pomegranted", "coconut"]; 
 
-function formatDates(element){
-  const parts = element.split("-");
-  return `${parts[1]}/${parts[2]}/${parts[0]}`;  
+const shortWords = words.filter(getShortWords); 
+const longWords = words.filter(getLongWords); 
+
+console.log(longWords); 
+
+
+function getShortWords(element) {
+  return element.length <= 6; 
 }
+
+function getLongWords(element) {
+  return element.length > 6; 
+}
+
