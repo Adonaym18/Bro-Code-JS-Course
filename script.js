@@ -1,57 +1,47 @@
-// forEach() = method used to iterate over the elemnts 
-//             of an array and apply a specified function (callback)
-//             to each element
+// .map() = accepts a callback and applies that function
+//          to each element of an array, then return a new array 
 
-//             array.forEach(callback)
-//             element, index, array are provided to the callback
+//          forEach() vs map() = The for each loops through each element of the array changing them one by one
+//                               The map() function creates a new array with the affected changes rather than altering the original one 
 
-// ex
-// let numbers = [1, 2, 3, 4, 5]; 
 
-// numbers.forEach(cube); 
-// numbers.forEach(display);
+//* Ex 1
+// const numbers = [1, 2, 3, 4, 5];
 
-// function double(element, index, array){
-//   array[index] = element * 2;
+// const squares = numbers.map(square); 
+// const cubes = numbers.map(cube); 
+// console.log(cubes); 
+
+// function square(element){
+//   return Math.pow(element , 2); 
 // }
 
-// function triple(element, index, array){
-//   array[index] = element * 3;
+// function cube(element){
+//   return Math.pow(element , 3); 
 // }
 
-// function square(elemnt, index, array){
-//   array[index] = Math.pow(elemnt, 2); 
+//* Ex2 
+
+// const students = ["Spongebob", "Patrick", "Squidward", "Sandy"]; 
+
+// const upper = students.map(upperCase); 
+// const lower = students.map(lowerCase); 
+// console.log(lower); 
+
+// function upperCase(element){
+//   return element.toUpperCase();  
 // }
 
-// function cube(elemnt, index, array){
-//   array[index] = Math.pow(elemnt, 3); 
+// function lowerCase(element){
+//   return element.toLowerCase();  
 // }
 
-// function display(element){
-//   console.log(element); 
-// }
+//* Ex3 
+const dates = ["2024-1-10", "2025-2-20", "2026-3-30"]; 
+const formattedDates = dates.map(formatDates); 
+console.log(formattedDates); 
 
-//* ex
-
-let fruits = ["apple", "orange", "banana", "coconut"]; 
-
-fruits.forEach(cap); 
-fruits.forEach(display); 
-
-
-function upperCase (element, index, array){
-  array[index] = element.toUpperCase(); 
+function formatDates(element){
+  const parts = element.split("-");
+  return `${parts[1]}/${parts[2]}/${parts[0]}`;  
 }
-
-function lowerCase (element, index, array){
-  array[index] = element.toLowerCase(); 
-}
-
-function cap(element, index, array){
-  array[index] = element.charAt(0).toUpperCase() + element.slice(1)
-}
-
-function display(element){
-  console.log(element); 
-}
-
