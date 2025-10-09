@@ -1,86 +1,61 @@
-// function declaration = define a resuable block of code 
-//                        that performes a specific task
+// Arrow functions = a concise way to writte function expressions  
+//                  good for simple functions that you use only once    
+//                  (parameters) => some code
 
+//* Ex 1
 
-// function hello(){
-//   console.log("Hello"); 
-// }
+//* Traditional way or Function Declaration
+    // function hello(){
+    //   console.log("Hello")
+    // }
+    // hello(); 
+  
+//*  Function expression way
 
-
-// function expressions = a way to define function as 
-//                        values or varibales
-
-//  1. Callbacks in asynchronus operations 
-//  2. Higher-Order functions 
-//  3. Closures 
-//  4. Event Listeners
-
-
-
-//* Ex1 - As a variable
-
-// const hello = function () {
-//   console.log("Hello");
-// }
-
-// hello();
-
-//* Ex2 - As a value 
-
-// const hello = function () {
-//   console.log("Hello");
-// }
-
-// setTimeout(hello, 3000);
-
-//* Ex3 - Passing a function as an argument
-
-// setTimeout(function(){
-//   console.log("Hello"); 
-// }, 3000); 
-
-//* Ex4 - Passing a function as an argument
-
-//* Using a function declaration 
-
-    // const numbers = [1, 2, 3, 4, 5, 6]; 
-
-    // const sqaured = numbers.map(sqaure)
-
-    // function sqaure(element){
-    //    return Math.pow(element, 2); 
+    // const hello = function(){
+    //   consosle.log("Hello"); 
     // }
 
+    // hello(); 
 
-    // console.log(sqaured); 
+//* Using Arrow Functions 
 
-//* Using a function expression
+    // const hello = (name, age) => {console.log(`Hello ${name}`)
+    //                               console.log(`You are ${age} years old`)};  
+    // hello("Adonay", 19); 
 
-    // const numbers = [1, 2, 3, 4, 5, 6]; 
+//* Ex2 
 
-    // const sqaured = numbers.map(function(element){
-    //        return Math.pow(element, 2); 
-    //     }); 
+  //* Function Declaration
+    // setTimeout(hello, 3000); 
 
-    // console.log(sqaured); 
+    // function hello (){
+    //   console.log("Hello"); 
+    // }
 
-//* Ex - Cubed / Practice using .map(), .filter(), .reduce()
+    // 
 
-    const numbers = [1, 2, 3, 4, 5, 6]; 
-    const cubed = numbers.map(function(element){
-      return Math.pow(element, 3); 
-    }); 
+  //* Function Expression
+    // setTimeout(function (){
+    //   console.log("Hello"); 
+    // }, 3000);
 
-    const evenNums = numbers.filter(function(element) {
-      return element % 2 === 0;
-    }); 
+  //*Arrow Function 
+    // setTimeout( () => console.log("Hello"), 3000);
 
-    const oddNums = numbers.filter(function(element) {
-      return element % 2 !== 0;
-    }); 
 
-    const total = numbers.reduce(function(acumulator, element){
-      return acumulator + element;
-    })
+//* Ex3 
 
-    console.log(total); 
+// Using Arrow functions with .map() .filter() .reduce() methods
+
+const numbers = [1, 2, 3, 4, 5, 6]; 
+
+const squares = numbers.map((element => Math.pow(element, 2)));
+const cubed = numbers.map((element => Math.pow(element, 3)));
+const oddNums = numbers.filter((element) => element % 2 !== 0);
+const evenNums = numbers.filter((element) => element % 2 === 0);
+const total = numbers.reduce((acumulator, element) => acumulator + element); 
+
+console.log(total); 
+
+
