@@ -1,61 +1,31 @@
-// Arrow functions = a concise way to writte function expressions  
-//                  good for simple functions that you use only once    
-//                  (parameters) => some code
+// Objects = A collection of related properties and/or methods 
+//           Can represent real world objects (people, products, places) 
+//            object = {key:value,
+//                      function()}
+
 
 //* Ex 1
 
-//* Traditional way or Function Declaration
-    // function hello(){
-    //   console.log("Hello")
-    // }
-    // hello(); 
-  
-//*  Function expression way
+const person1  = {
+    firstName: "Spongebob",
+    lastName: "Sqaurepants", 
+    age: 30,
+    isEmployed: true,
+    sayHello: () => {console.log("Hi! I am Spongebob!")}, 
+    eat: () => {console.log("I am eating a Krabby Patty")},
+}
 
-    // const hello = function(){
-    //   consosle.log("Hello"); 
-    // }
+const person2  = {
+    firstName: "Patirck",
+    lastName: "Star", 
+    age: 42,
+    isEmployed: false,
+    sayHello: () => {console.log("Hey, I'm Patrick...")}, 
+    eat: () => {console.log("I am eating rost beef, chicken, and pizza")},
+}
 
-    // hello(); 
+person1.eat(); 
+person2.eat(); 
 
-//* Using Arrow Functions 
-
-    // const hello = (name, age) => {console.log(`Hello ${name}`)
-    //                               console.log(`You are ${age} years old`)};  
-    // hello("Adonay", 19); 
-
-//* Ex2 
-
-  //* Function Declaration
-    // setTimeout(hello, 3000); 
-
-    // function hello (){
-    //   console.log("Hello"); 
-    // }
-
-    // 
-
-  //* Function Expression
-    // setTimeout(function (){
-    //   console.log("Hello"); 
-    // }, 3000);
-
-  //*Arrow Function 
-    // setTimeout( () => console.log("Hello"), 3000);
-
-
-//* Ex3 
-
-// Using Arrow functions with .map() .filter() .reduce() methods
-
-const numbers = [1, 2, 3, 4, 5, 6]; 
-
-const squares = numbers.map((element => Math.pow(element, 2)));
-const cubed = numbers.map((element => Math.pow(element, 3)));
-const oddNums = numbers.filter((element) => element % 2 !== 0);
-const evenNums = numbers.filter((element) => element % 2 === 0);
-const total = numbers.reduce((acumulator, element) => acumulator + element); 
-
-console.log(total); 
 
 
