@@ -1,31 +1,22 @@
-// Objects = A collection of related properties and/or methods 
-//           Can represent real world objects (people, products, places) 
-//            object = {key:value,
-//                      function()}
+// this = reference to the obkect where THIS is used 
+//       (the obkect depends on the immediate context) 
+//       person.name = this.name
 
 
-//* Ex 1
 
-const person1  = {
-    firstName: "Spongebob",
-    lastName: "Sqaurepants", 
-    age: 30,
-    isEmployed: true,
-    sayHello: () => {console.log("Hi! I am Spongebob!")}, 
-    eat: () => {console.log("I am eating a Krabby Patty")},
+const person1 = {
+    name: "Spongebob",
+    favFood: "Hambergers", 
+    sayHello: function(){console.log(`Hi! I am ${this.favFood}`)}, 
+    eat: function(){console.log(`${this.name} is eating ${this.favFood}`)}, 
 }
 
-const person2  = {
-    firstName: "Patirck",
-    lastName: "Star", 
-    age: 42,
-    isEmployed: false,
-    sayHello: () => {console.log("Hey, I'm Patrick...")}, 
-    eat: () => {console.log("I am eating rost beef, chicken, and pizza")},
+const person2 = {
+    name: "Patrick",
+    favFood: "Pizza", 
+    sayHello: function(){console.log(`Hi! I am ${this.favFood}`)}, 
+    eat: function(){console.log(`${this.name} is eating ${this.favFood}`)}, 
 }
 
-person1.eat(); 
-person2.eat(); 
-
-
-
+person1.eat();  
+person2.eat();  
