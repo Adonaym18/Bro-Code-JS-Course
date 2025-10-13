@@ -1,22 +1,18 @@
-// this = reference to the obkect where THIS is used 
-//       (the obkect depends on the immediate context) 
-//       person.name = this.name
+// constructor = special method for defining the 
+//               properties and methods of objects
 
-
-
-const person1 = {
-    name: "Spongebob",
-    favFood: "Hambergers", 
-    sayHello: function(){console.log(`Hi! I am ${this.favFood}`)}, 
-    eat: function(){console.log(`${this.name} is eating ${this.favFood}`)}, 
+function Car(make, model, year, color){
+    this.make = make,
+    this.model = model, 
+    this.year = year, 
+    this.color = color
+    this.drive = function(){console.log(`You drive the ${this.model}`)}
 }
 
-const person2 = {
-    name: "Patrick",
-    favFood: "Pizza", 
-    sayHello: function(){console.log(`Hi! I am ${this.favFood}`)}, 
-    eat: function(){console.log(`${this.name} is eating ${this.favFood}`)}, 
-}
+const car1 = new Car("Ford", "Mustang", "2024", "Red");
+const car2 = new Car("Tesla", "Model 3", "2025", "White");
+const car3 = new Car("Doage", "Charger", "2026", "silver");
 
-person1.eat();  
-person2.eat();  
+car1.drive();
+car2.drive();
+car3.drive();
