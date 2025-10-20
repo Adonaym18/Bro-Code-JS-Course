@@ -1,116 +1,89 @@
-// getter = special method that makes a property readable 
-// setter = special method that makes a property writeable 
+// destructuring = extract values from arrays and objects 
+//                 then assign them to variables in a convenient way 
+//                 [] = to perform array destructuring 
+//                 {} = to perfom object destructuring 
+//                 5 examples 
 
-// validate and modify a value when reading/writing a property
+//* -------- EXAMPLE 1 --------
+// SWAP THE VALUE OF TWO VARIABLES
 
-//* Ex 1 
-// class Rectangle {
+  // let a = 1;
+  // let b = 2;
 
-//   constructor(width, height){
-//     this.width = width; 
-//     this.height = height; 
-//   }
+  // left side: performing destructuring 
+  // right side: creating a new array
+  // [a, b] = [b , a]; 
 
-//   set width(newWidth){
-//     if(newWidth > 0){
-//       this._width = newWidth; 
-//     }
-//     else {
-//       console.error("Width must be a postive number"); 
-//     }
-//   }
-
-//   set height(newHeight){
-//    if(newHeight > 0){
-//       this._height = newHeight; 
-//     }
-//    else {
-//       console.error("Height must be a postive number"); 
-//     }
-//   }
-
-//   get width(){
-//     return `${this._width.toFixed(1)}cm`; 
-//   }
-
-//   get height(){
-//     return `${this._height.toFixed(1)}cm`; 
-//   }
-
-//   get area(){
-//     return `${(this._width * this._height).toFixed(1)}cm^2`; 
-//   }
-
-// }
-
-// const rectangle = new Rectangle(3, 4);
+  // console.log(a);
+  // console.log(b);
 
 
-// console.log(rectangle.width);
-// console.log(rectangle.height);
-// console.log(rectangle.area);
+//* -------- EXAMPLE 2 --------
+// SWAP 2 ELEMENTS IN AN ARRAY
+
+  // const colors = ["red", "green", "blue", "black", "white"];
+  // [colors[0], colors[4]] = [colors[4], colors[0]]; 
+
+  // console.log(colors); 
 
 
+//* -------- EXAMPLE 3 --------
+// ASSIGN ARRAY ELEMENTS TO VARIABLES 
 
-class Person {
+  // const colors = ["red", "green", "blue", "black", "white"];
 
-  constructor(firstName, lastName, age){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age; 
-  }
+  // const [firstColor, secondColor, thirdColor, ...extrColors] = colors;
 
-  set firstName(newFirstName){
-    if(typeof newFirstName === "string" && newFirstName.length > 0){
-      this._firstName = newFirstName; 
-    }
-    else{
-    console.error("First name must be a non empty string"); 
-    }
-  }
+  // console.log(firstColor);
+  // console.log(secondColor);
+  // console.log(thirdColor);
+  // console.log(extrColors);
 
-  set lastName(newLastName){
-    if(typeof newLastName === "string" && newLastName.length > 0){
-      this._lastName = newLastName; 
-    }
-    else{
-    console.error("Last name must be a non empty string"); 
-    }
-  }
+//* -------- EXAMPLE 4  --------
+// EXTRACT VALUES FROM OBJECTS
 
-  set age(newAge){
-    if(typeof newAge === "number" && newAge >= 0){
-      this._age = newAge; 
-    }
-    else{
-      console.error("Age must be a non negative number")
-    }
-  }
+  // const person1 = {
+  //   firstName: "Spongebob",
+  //   lastName: "Sqaurepants",
+  //   age: 30,
+  //   job: "Fry Cook", 
+  // }
 
-  get firstName(){
-    return this._firstName; 
-  }
-  
-  get lastName(){
-    return this._lastName; 
-  }
+  // const person2 = {
+  //   firstName: "Patrick",
+  //   lastName: "Star",
+  //   age: 34, 
+  // }
 
-  get fullName(){
-    return this._firstName + " " + this.lastName; 
-  }
+  // const {firstName, lastName, age, job="Unemployed"} = person2; 
 
-  get age(){
-    return this._age; 
-  }
+  // console.log(firstName);
+  // console.log(lastName);
+  // console.log(age);
+  // console.log(job);
+
+
+//* -------- EXAMPLE 5  --------
+// DESTRUCTURE IN FUNCTION PARAMETERS
+
+function displayPerson({firstName, lastName, age, job="Unemployed"}){
+  console.log(`name: ${firstName} ${lastName}`);
+  console.log(`age: ${age}`);
+  console.log(`job: ${job}`);
 
 }
 
-const person = new Person("Adonay", "Mendez", 19);
+  const person1 = {
+    firstName: "Spongebob",
+    lastName: "Sqaurepants",
+    age: 30,
+    job: "Fry Cook", 
+  }
 
-console.log(person.firstName);
-console.log(person.lastName);
-console.log(person.age);
+  const person2 = {
+    firstName: "Patrick",
+    lastName: "Star",
+    age: 34, 
+  }
 
-console.log(person.fullName); 
-
-
+  displayPerson(person1);
